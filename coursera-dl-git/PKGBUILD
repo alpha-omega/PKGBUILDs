@@ -1,0 +1,36 @@
+# Maintainer: OmeGa <omega at mailoo dot org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=coursera-dl-git
+pkgver=20121130
+pkgrel=1
+pkgdesc="Script for downloading Coursera.org videos and naming them."
+arch=('any')
+url="https://github.com/jplehmann/coursera"
+license=('GPL')
+depends=('python2-argparse' 'python2-beautifulsoup3' 'python2-distribute')
+makedepends=('git')
+
+_gitroot="git://github.com/jplehmann/coursera.git"
+_gitname="coursera-dl"
+
+build() {
+  cd "$srcdir"
+
+  msg "Connecting to GIT server..."
+  if [[ -d $_gitname ]] ; then
+    cd $_gitname && git pull origin
+    msg "The local files are updated."
+  else
+    git clone --depth=1 $_gitroot $_gitname
+  fi
+  msg "GIT checkout done or server timeout."
+}
+
+package() {
+  cd "$srcdir/$_gitname"
+  sed -i 's|#!/usr/bin/env python|#!/usr/bin/env python2|' coursera-dl
+  install -Dm755 coursera-dl "$pkgdir/usr/bin/coursera-dl"
+}
+
+# vim:set ts=2 sw=2 et:
