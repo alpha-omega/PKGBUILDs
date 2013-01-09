@@ -1,0 +1,23 @@
+# Ignore working directories
+src/
+pkg/
+
+# Ignore all packages and tarballs
+*.bin
+*.deb
+*.gem
+*.run
+*.rpm
+*.run
+*.tar.bz2
+*.tar.gz
+*.tar.xz
+*.tgz
+*.xpi
+*.zip
+
+# Ignore partially downloaded files
+*.part
+
+# Ignore signature files
+*.asc
