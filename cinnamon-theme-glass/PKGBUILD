@@ -1,8 +1,8 @@
 # Maintainer: OmeGa <omega at mailoo dot org>
 
 pkgname=cinnamon-theme-glass
-_file=JBHS-YPMU-QYDK
-pkgver=74
+_file=90CN-N8PP-8CLZ
+pkgver=76
 pkgrel=1
 pkgdesc="Glass Elementary, Mint & Ubuntu themes for Cinnamon."
 arch=('any')
@@ -10,7 +10,7 @@ url="http://cinnamon-spices.linuxmint.com/themes/view/150"
 license=('unknown')
 depends=('cinnamon' 'ttf-ubuntu-font-family')
 source=($pkgname-$pkgver.zip::http://cinnamon-spices.linuxmint.com/uploads/themes/$_file.zip)
-sha1sums=('64bd274c1d3864aa556662f7bcecdd77360d1ec8')
+sha1sums=('6af79378ce0c27504e8aee723f588b25bd8e825c')
 
 package() {
   cd "$srcdir"
