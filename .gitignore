@@ -15,9 +15,13 @@ pkg/
 *.tgz
 *.xpi
 *.zip
+*.vim
 
 # Ignore partially downloaded files
 *.part
 
 # Ignore signature files
 *.asc
+
+# Ignore .swp files
+*.swp
